@@ -34,7 +34,7 @@ def submit_file(form_data, file):
             print("  Submitted file: {0}".format(str(subres.json()["sample"]["filename"])))
             print('--------------------------------------------------------------------------')
             print()
-            print(subres.json())
+##            print(subres.json())
 ##            return sampleid
         else:
             print("ERROR: Something went wrong in {0}. Error: {1}".format(sys._getframe().f_code.co_name, str(subres.text)))
