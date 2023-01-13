@@ -8,7 +8,8 @@ Rename **sample-config.py** to **config.py** and add your API key.
 ```
 usage: Submit MCAP Samples [-h] [-e] [-v] [-d] sample
 
-Utility for uploading single or multiple files to the Malicious Code Analysis Platform (MCAP) for processing and reporting.
+Utility for uploading single or multiple files to the Malicious Code Analysis
+Platform (MCAP) for processing and reporting.
 
 positional arguments:
   sample         Sample file or directory
