@@ -5,7 +5,7 @@ Python script to submit files to CIS Malicious Code Analysis Platform (powered b
 Rename **sample-config.py** to **config.py** and add your API key.
 
 ## Usage
----
+```
 usage: Submit MCAP Samples [-h] [-e] [-v] [-d] sample
 
 Utility for uploading single or multiple files to the Malicious Code Analysis Platform (MCAP) for processing and reporting.
@@ -17,6 +17,6 @@ options:
   -h, --help     show this help message and exit
   -v, --verbose  Increase output verbosity
   -d, --debug    Enable debug mode for testing
+```
 ---
-
 MCAP information: https://mcap.cisecurity.org/about
