@@ -1,12 +1,14 @@
 import os
 import sys
+import re
 import argparse
 import datetime
 import time
+
+import config
 import json
 import requests
 import hashlib
-import config
 import eml_parser
 
 parser = argparse.ArgumentParser(
@@ -56,13 +58,20 @@ def rename_eml(eml_file):
 
     email_dict = json.loads(json.dumps(parsed_eml, default=json_serial))
     tmp_name = email_dict["header"]["subject"]
-    eml_new_name = tmp_name[0:55] + ".eml"
+
+    getVals = list([val for val in tmp_name
+                if val.isalpha() or val.isnumeric() or val.isspace()])
+    
+    new_tmp_name = "".join(getVals)
+
+    eml_new_name = new_tmp_name[0:55] + ".eml"
     
     if args.debug or args.verbose:
         print("Submitted Filename:", eml_file)
+        print("New TMP Filename: ", new_tmp_name)
         print("New Filename: ", eml_new_name)
-
-    os.rename(eml_file, eml_new_name)
+    else:
+        os.rename(eml_file, eml_new_name)
 
     return eml_new_name
 
